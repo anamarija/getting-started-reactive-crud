@@ -1,0 +1,64 @@
+2020-06-02 10:46:44,500 anamarijas-mbp getting-started-reactive-rest-dev.jar[46726] INFO  [io.quarkus] (Quarkus Main Thread) getting-started-reactive-rest 1.0-SNAPSHOT on JVM (powered by Quarkus 999-SNAPSHOT) started in 2.665s. Listening on: http://0.0.0.0:8080
+2020-06-02 10:46:44,532 anamarijas-mbp getting-started-reactive-rest-dev.jar[46726] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2020-06-02 10:46:44,532 anamarijas-mbp getting-started-reactive-rest-dev.jar[46726] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, mutiny, reactive-pg-client, resteasy, resteasy-jsonb, resteasy-mutiny, vertx]
+2020-06-02 10:46:48,954 anamarijas-mbp getting-started-reactive-rest-dev.jar[46726] ERROR [io.qua.ver.htt.run.QuarkusErrorHandler] (executor-thread-1) HTTP Request to /fruits failed, error id: 441094e4-6fdd-4ab3-a753-68b0eb1d4a2d-1: org.jboss.resteasy.spi.UnhandledException: io.vertx.pgclient.PgException: database "db" does not exist
+	at org.jboss.resteasy.core.ExceptionHandler.handleException(ExceptionHandler.java:381)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:216)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:515)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:259)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:160)
+	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:362)
+	at org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:163)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:245)
+	at io.quarkus.resteasy.runtime.standalone.RequestDispatcher.service(RequestDispatcher.java:73)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler.dispatch(VertxRequestHandler.java:132)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler.access$000(VertxRequestHandler.java:37)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler$1.run(VertxRequestHandler.java:94)
+	at io.quarkus.runtime.CleanableExecutor$CleaningRunnable.run(CleanableExecutor.java:231)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2046)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1578)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1452)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:479)
+Caused by: io.vertx.pgclient.PgException: database "db" does not exist
+	at io.vertx.pgclient.impl.codec.ErrorResponse.toException(ErrorResponse.java:29)
+	at io.vertx.pgclient.impl.codec.InitCommandCodec.handleErrorResponse(InitCommandCodec.java:97)
+	at io.vertx.pgclient.impl.codec.PgDecoder.decodeError(PgDecoder.java:233)
+	at io.vertx.pgclient.impl.codec.PgDecoder.decodeMessage(PgDecoder.java:122)
+	at io.vertx.pgclient.impl.codec.PgDecoder.channelRead(PgDecoder.java:102)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2020-06-02 10:47:15,640 anamarijas-mbp getting-started-reactive-rest-dev.jar[46726] INFO  [io.quarkus] (Quarkus Main Thread) getting-started-reactive-rest stopped in 0.012s
+2020-06-02 10:49:34,988 anamarijas-mbp getting-started-reactive-rest-dev.jar[46867] INFO  [io.quarkus] (Quarkus Main Thread) getting-started-reactive-rest 1.0-SNAPSHOT on JVM (powered by Quarkus 999-SNAPSHOT) started in 121.704s. Listening on: http://0.0.0.0:8080
+2020-06-02 10:49:35,016 anamarijas-mbp getting-started-reactive-rest-dev.jar[46867] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2020-06-02 10:49:35,017 anamarijas-mbp getting-started-reactive-rest-dev.jar[46867] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, mutiny, reactive-pg-client, resteasy, resteasy-jsonb, resteasy-mutiny, vertx]
+2020-06-02 10:49:40,283 anamarijas-mbp getting-started-reactive-rest-dev.jar[46867] INFO  [io.quarkus] (Quarkus Main Thread) getting-started-reactive-rest stopped in 0.013s
+2020-06-02 10:51:39,881 anamarijas-mbp getting-started-reactive-rest-dev.jar[47030] INFO  [io.quarkus] (Quarkus Main Thread) getting-started-reactive-rest 1.0-SNAPSHOT on JVM (powered by Quarkus 999-SNAPSHOT) started in 93.849s. Listening on: http://0.0.0.0:8080
+2020-06-02 10:51:39,915 anamarijas-mbp getting-started-reactive-rest-dev.jar[47030] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2020-06-02 10:51:39,915 anamarijas-mbp getting-started-reactive-rest-dev.jar[47030] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, mutiny, reactive-pg-client, resteasy, resteasy-jsonb, resteasy-mutiny, vertx]
+2020-06-02 10:51:45,196 anamarijas-mbp getting-started-reactive-rest-dev.jar[47030] INFO  [io.quarkus] (Quarkus Main Thread) getting-started-reactive-rest stopped in 0.011s
+2020-06-02 10:53:13,193 anamarijas-mbp getting-started-reactive-rest-dev.jar[47185] INFO  [io.quarkus] (Quarkus Main Thread) getting-started-reactive-rest 1.0-SNAPSHOT on JVM (powered by Quarkus 999-SNAPSHOT) started in 80.119s. Listening on: http://0.0.0.0:8080
+2020-06-02 10:53:13,230 anamarijas-mbp getting-started-reactive-rest-dev.jar[47185] INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2020-06-02 10:53:13,230 anamarijas-mbp getting-started-reactive-rest-dev.jar[47185] INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, mutiny, reactive-pg-client, resteasy, resteasy-jsonb, resteasy-mutiny, vertx]
+2020-06-02 10:59:01,586 anamarijas-mbp getting-started-reactive-rest-dev.jar[47185] INFO  [io.quarkus] (Quarkus Main Thread) getting-started-reactive-rest stopped in 0.110s

@@ -1,0 +1,3 @@
+org/acme/reactive/crud/DatabaseResource.class
+org/acme/reactive/crud/FruitResourceTest.class
+org/acme/reactive/crud/FruitResourceIT.class
